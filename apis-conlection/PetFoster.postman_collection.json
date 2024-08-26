@@ -1,0 +1,2048 @@
+{
+	"info": {
+		"_postman_id": "fce1a32a-bd1b-4c23-98d2-f7d68e4ea51f",
+		"name": "PetFoster 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29532805"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hantl111\",\r\n    \"password\": \"123456\"\r\n}\r\n\r\n                    \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"khangpn2\",\r\n    \"password\": \"123123\",\r\n    \"confirmPassword\": \"123123\",\r\n    \"email\": \"khangpnpc04910@fpt.edu.vn\",\r\n    \"gender\": \"true\",\r\n    \"fullname\": \"ha lam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/verify?code=613ec25a-fb31-42c0-83f9-986f4e566b8d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "613ec25a-fb31-42c0-83f9-986f4e566b8d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Re-verify Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/refresh-code?code=77ca7700-2b95-44cc-a513-77baf3fd2dde",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"refresh-code"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "77ca7700-2b95-44cc-a513-77baf3fd2dde"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "statistical",
+			"item": [
+				{
+					"name": "Report Daily",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/report/daily",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"report",
+								"daily"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Sales Overview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/report/sales-overview/?year=2023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"report",
+								"sales-overview",
+								""
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2023"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Product Revenue By Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/report/product-revenue-by-date",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"report",
+								"product-revenue-by-date"
+							],
+							"query": [
+								{
+									"key": "minDate",
+									"value": "2023-10-01",
+									"disabled": true
+								},
+								{
+									"key": "maxDate",
+									"value": "2023-10-10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"id\": \"PD0047\",\r\n        \"name\": \"SOFA' TWEED\",\r\n        \"desc\": \"Enjoy for pet\",\r\n        \"productType\": {\r\n             \"id\": \"DF\",\r\n            \"name\": \"Dog food\"\r\n        },\r\n        \"isActive\": true,\r\n        \"brand\": \"Royal Canin\",\r\n        \"productsRepo\": [\r\n            {\r\n                \"size\": 1,\r\n                \"inPrice\": 20000.0,\r\n                \"outPrice\": 30000.0,\r\n                \"quantity\": 50,\r\n                \"inStock\": true\r\n            },\r\n            {\r\n                \"size\": 2,\r\n                \"inPrice\": 20011.0,\r\n                \"outPrice\": 300001.0,\r\n                \"quantity\": 5555,\r\n                \"inStock\": true\r\n            }\r\n        ],\r\n        \"orderDetails\": null\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/filter-product/?typeName=Rabbit+Food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"filter-product",
+								""
+							],
+							"query": [
+								{
+									"key": "typeName",
+									"value": "Rabbit+Food"
+								},
+								{
+									"key": "minPrice",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "500000",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "brand",
+									"value": "Canin",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "low",
+									"disabled": true
+								},
+								{
+									"key": "productName",
+									"value": "undifine",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth]Get all product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/PD0002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								"PD0002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/product/detail/PD0001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"product",
+								"detail",
+								"PD0001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth]Edit Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/PD0001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								"PD0001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n        \"name\": \"SOFA' TWEED\",\r\n        \"desc\": \"Enjoy for pet\",\r\n        \"productType\": \"CF\",\r\n        \"brand\": \"Natural Core \",\r\n        \"productsRepo\": [\r\n            {\r\n                \"size\": 1,\r\n                \"inPrice\": 20000.0,\r\n                \"outPrice\": 30000.0,\r\n                \"quantity\": 50,\r\n                \"inStock\": true\r\n            },\r\n            {\r\n                \"size\": 2,\r\n                \"inPrice\": 20011.0,\r\n                \"outPrice\": 300001.0,\r\n                \"quantity\": 5555,\r\n                \"inStock\": true\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "PD0001",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update s",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "listImgs",
+									"contentType": "",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "product",
+									"value": "{ \n        \"name\": \"SOFA' TWEED\",\n        \"desc\": \"Enjoy for pettttt\",\n        \"productType\": \"CF\",\n\"brand\": \"abc \",\n        \"productsRepo\": [\n            {\n                \"size\": 1,\n                \"inPrice\": 20000.0,\n                \"outPrice\": 30000.0,\n                \"quantity\": 50,\n                \"inStock\": true\n            }\n        ]\n    }",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/PD0041",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								"PD0041"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "PD0001",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Get Info Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/info/PD0001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								"info",
+								"PD0001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Update Product with info",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": \"PD0040\",\r\n    \"name\": \"Natural Salmon Organic\",\r\n    \"brand\": \"Natural Core\",\r\n    \"type\": \"DF\",\r\n    \"description\": \"Enjoy for petttt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/info/PD0040",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								"info",
+								"PD0040"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/PC/Downloads/New folder/imgs/Loc.jpg",
+										"/C:/Users/PC/Downloads/New folder/imgs/Thao2.jpg"
+									]
+								},
+								{
+									"key": "name",
+									"value": "SOFA' TWEED",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Enjoy for pet",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "CF",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "Natural Core",
+									"type": "text"
+								},
+								{
+									"key": "repo[0].size",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "repo[0].quantity",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "repo[0].inPrice",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "repo[0].outPrice",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "repo[1].size",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "repo[1].quantity",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "repo[1].inPrice",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "repo[1].outPrice",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "PD0001",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pages",
+			"item": [
+				{
+					"name": "Take-action",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/take-action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"take-action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Take-action-best-sellers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/take-action/best-sellers?page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"take-action",
+								"best-sellers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "[auth]Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullname",
+									"value": "Pham Nhut Khang",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "2003-12-21",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0344507491",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "phu tan chau thanh hau gianggg",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth]Update-profile",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avartar",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth]Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTcyNzkyMzAsImV4cCI6MTY5NzI4MjgzMCwidXNlcm5hbWUiOiJraGFuZ3BuMSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.YSxYAC-P5Kdwnp6h-8cGEqxkAW4bFnDWGvqCfbSwN86DsXTwYToQ871HF1hEbd05Tk6Kv5qu9Nu5j0WKsi2iWA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123123\",\r\n    \"newPassword\": \"123123123\",\r\n    \"confirmPassword\": \"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/changePass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"changePass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"phamnhatkhang.hgi1167@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/users/dc9d7109-6c0b-486f-b9e9-31266c2f8534",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"users",
+								"dc9d7109-6c0b-486f-b9e9-31266c2f8534"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Change password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123\",\r\n    \"newPassword\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/profile/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"profile",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orther",
+			"item": [
+				{
+					"name": "[auth]payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"ha nguyen\",\r\n    \"address\": \"1\",\r\n    \"phone\": \"0123456789\",\r\n    \"shippingFee\": 1,\r\n    \"orderProducts\": [\r\n        {\r\n            \"productId\": \"PD0001\",\r\n            \"size\": 250,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"productId\": \"PD0001\",\r\n            \"size\": 500,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": \"PD0002\",\r\n            \"size\": 500,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Types And Brands",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/product/types-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"product",
+								"types-brands"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-repo",
+			"item": [
+				{
+					"name": "[auth] Update-Repo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inPrice\": \"260000\",\r\n    \"outPrice\": \"320000\",\r\n    \"quantity\": \"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product-repo/49/u",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product-repo",
+								"49",
+								"u"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Create-Repo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\":300,\r\n    \"inPrice\": \"260000\",\r\n    \"outPrice\": \"320000\",\r\n    \"quantity\": \"70\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product-repo/PD0033/c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product-repo",
+								"PD0033",
+								"c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Delete-Repo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inPrice\": \"260000\",\r\n    \"outPrice\": \"320000\",\r\n    \"quantity\": \"70\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product-repo/49",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product-repo",
+								"49"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[List repository with id product]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/product-repo/PD0033",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"product-repo",
+								"PD0033"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "imgs",
+			"item": [
+				{
+					"name": "[auth] Delete imgs",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8019/images/PD0040",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"images",
+								"PD0040"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Get image by id product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/images/PD0032",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"images",
+								"PD0032"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] add images",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+									"    console.log(response.json());\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/PC/Downloads/New folder/imgs/4.jpg",
+										"/C:/Users/PC/Downloads/New folder/imgs/3.jpg",
+										"/C:/Users/PC/Downloads/New folder/imgs/1.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/images/PD0032",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"images",
+								"PD0032"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Delete image",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/images/PD0032/86",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"images",
+								"PD0032",
+								"86"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "addresses",
+			"item": [
+				{
+					"name": "[auth] Get Default",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/user/addresses/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"addresses",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Create new address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pham Nhut Khang\",\r\n    \"phone\": \"0344507492\",\r\n    \"address\": {\r\n        \"province\": \"Thanh Phố Cần Thơ\",\r\n        \"district\": \"Quận Ninh Kiều\",\r\n        \"ward\": \"Phường An Bình \",\r\n        \"address\": \"số 302, hiểm 2\"\r\n    },\r\n    \"setDefault\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Update address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pham Nhut Khang\",\r\n    \"phone\": \"0344507491\",\r\n    \"address\": {\r\n        \"province\": \"Thanh Phố Cần Thơ\",\r\n        \"district\": \"Quận Ninh Kiều\",\r\n        \"ward\": \"Phường An Bình \",\r\n        \"address\": \"số 302, hiểm 2\"\r\n    },\r\n    \"setDefault\": \"false\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/addresses/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"addresses",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Delete address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/addresses/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"addresses",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Get Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/user/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Get Addresse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/user/addresses/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"addresses",
+								"22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Order History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/user/order/history?status=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"order",
+								"history"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Get orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 17,\r\n    \"amount\": 72000000,\r\n    \"isPaid\": \"true\",\r\n    \"payAt\": \"20231118044532\",\r\n    \"transactionNumber\": 14186281,\r\n    \"paymentMethod\": {\r\n        \"id\": 2,\r\n        \"method\": \"ATM\"\r\n    }\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth]Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressId\": 6,\r\n    \"deliveryId\": 1,\r\n    \"methodId\": 1,\r\n    \"ship\": 20000,\r\n    \"orderItems\": [\r\n        {\r\n            \"productId\": \"PD0001\",\r\n            \"size\": 1000,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"productId\": \"PD0001\",\r\n            \"size\": 500,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": \"PD0040\",\r\n            \"size\": 250,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": \"PD0040\",\r\n            \"size\": 500,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth] Detail order hisory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/user/order/history/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"order",
+								"history",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[admin]Order Tracking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDAyODA2MjQsImV4cCI6MTcwMDY0MDYyNCwidXNlcm5hbWUiOiJoYW50bDExMSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.mv-Ynzlr6Vaq5oJUaVMRGY4TZJFgYVulDZtg1iYv_w23uh-M2fTkk6gX6wgXzD8OGrLlbwsqBh_zPZuvtwwrBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/orders/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"orders",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "khach",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "placed",
+									"disabled": true
+								},
+								{
+									"key": "orderId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "date-desc",
+									"disabled": true
+								},
+								{
+									"key": "maxDate",
+									"value": "2024-12-17",
+									"disabled": true
+								},
+								{
+									"key": "minDate",
+									"value": "2023-02-15",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[admin]Order Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/orders/details/42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"orders",
+								"details",
+								"42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[admin]Update Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDAzMjE0NjAsImV4cCI6MTcwMDY4MTQ2MCwidXNlcm5hbWUiOiJoYW50bDExMSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.tx9RA_-PDcjBJ5FgcYWWwQQlroWNWW0RdLnSP0D6vLOk_qzYeo7FWK7tqBkzmq5zIGJiyfe8sHIyAG5MReHDSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Delivered\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/admin/orders/status/46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"orders",
+								"status",
+								"46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[admin]Order Tracking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDAyODA2MjQsImV4cCI6MTcwMDY0MDYyNCwidXNlcm5hbWUiOiJoYW50bDExMSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.mv-Ynzlr6Vaq5oJUaVMRGY4TZJFgYVulDZtg1iYv_w23uh-M2fTkk6gX6wgXzD8OGrLlbwsqBh_zPZuvtwwrBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/orders/filter?username=khach&status=placed&sort=date-desc&maxDate=2023-11-17&minDate=2023-11-15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"orders",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "khach"
+								},
+								{
+									"key": "status",
+									"value": "placed"
+								},
+								{
+									"key": "orderId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "date-desc"
+								},
+								{
+									"key": "maxDate",
+									"value": "2023-11-17"
+								},
+								{
+									"key": "minDate",
+									"value": "2023-11-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[auth]Cancel Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDAzMjQwODEsImV4cCI6MTcwMDY4NDA4MSwidXNlcm5hbWUiOiJoYW50bDExMSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.lMyzTh4kDPhSKMUXCG0qxvSi1MpSJLCHx-C1GLVZsAr_cX95n-fdDmo4EBElRqWU7SL2GjrSKIkkIiy8CnaA3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Cancelled\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/order/cancel/35",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"order",
+								"cancel",
+								"35"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "[auth] Create reviews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\":\"47\",\r\n    \"productId\": \"PD0001\",\r\n    \"comment\": \"Bad\",\r\n    \"rate\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8019/api/user/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/admin/reviews/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"admin",
+								"reviews",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "carts",
+			"item": [
+				{
+					"name": "[auth] Get cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8019/api/user/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8019",
+							"path": [
+								"api",
+								"user",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDA0OTk0MDgsImV4cCI6MTcwMDg1OTQwOCwidXNlcm5hbWUiOiJoYW50bDExMSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.3CJuWeffXCvmbbDGGc4iKHwX0_opsS8jSkm--n8koZYbO5x4v-FlocwOPWajCqPd2oY4n6FpZvck9KnbVk0t4A",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

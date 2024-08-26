@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "deba4725-eb33-4659-ae8f-0724bd452732",
+		"name": "API GetAllUser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27745688"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test002\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8019/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8019",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUserRequest_keyword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDA1MTg1NDEsImV4cCI6MTcwMDg3ODU0MSwidXNlcm5hbWUiOiJ0ZXN0MDAyIiwiYXV0aG9yaXRpZXMiOiJST0xFX0FETUlOLFJPTEVfU1VQRVJfQURNSU4ifQ.IISRuKU3eLF_1FzW2-g0xIIpxRqpQ-vd9wlPc8PI3EYjbM032mzia2JcRybC963xIyWpV0uW3lkO5dkC-RJkzg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8019/api/admin/users?keyword=duy",
+					"host": [
+						"localhost"
+					],
+					"port": "8019",
+					"path": [
+						"api",
+						"admin",
+						"users"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "duy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUserRequest_pages",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUserRequest_sort",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
